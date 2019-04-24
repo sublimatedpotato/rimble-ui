@@ -45,7 +45,7 @@ storiesOf('Components/QR Code', module)
         <Heading.h4>Explain what it is</Heading.h4>
         <Text>
           Let your user know what the QR code represents and what will happen
-          once they scan the QR code. Don't just assume your user is famliar
+          once they scan the QR code. Don't just assume your user is familiar
           with the pattern of QR codes being used for public addresses.
         </Text>
         <br />
@@ -78,7 +78,7 @@ storiesOf('Components/QR Code', module)
         <Text>
           If you're using a QR code to represent a public address, always give
           the user the ability to copy/paste the address manually too. They may
-          not want to grant your dApp access to their camera or they may be at
+          not want to grant your dApp access to their camera or they may be at a
           desktop set-up where scanning QR codes is inconvenient.
         </Text>
         <br />
