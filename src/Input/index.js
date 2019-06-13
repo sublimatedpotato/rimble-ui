@@ -1,14 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
 import { themeGet, fontSize, fontFamily, boxShadow } from 'styled-system';
-
+import theme from '../theme';
 import Box from '../Box';
 import Icon from '../Icon';
+import FileInput from './FileInput';
 
-import defaultTheme from '../theme';
-
-const Input = styled(Box)`
+const StyledInput = styled(Box)`
   & {
     appearance: none;
   }
@@ -60,18 +59,26 @@ const StyledIconWrapper = styled(Box)`
   }
 `;
 
-const WithIconWrapper = ({ className, ...props }) => {
+const WithValidationStyle = React.forwardRef((props, ref) => {
   return (
-    <StyledIconWrapper className={className} {...props}>
-      <Input className={className} {...props} />
+    <StyledIconWrapper width={1}>
+      <StyledInput {...props} ref={ref} />
       <Icon className={'icon-valid'} name={'CheckCircle'} color={'#28C081'} />
       <Icon className={'icon-invalid'} name={'Warning'} color={'#DC2C10'} />
     </StyledIconWrapper>
   );
+});
+
+const Input = props => {
+  if (props.type === 'file') {
+    return <FileInput {...props} />;
+  } else {
+    return <StyledInput {...props} />;
+  }
 };
 
-Input.defaultProps = {
-  theme: defaultTheme,
+const defaultProps = {
+  theme,
   as: 'input',
   color: 'copyColor',
   bg: 'white',
@@ -87,8 +94,25 @@ Input.defaultProps = {
   boxShadow: 1,
 };
 
+// let Input;
+//
+// Input = StyledInput;
+Input.WithValidationStyle = WithValidationStyle;
+
+Input.defaultProps = defaultProps;
+WithValidationStyle.defaultProps = defaultProps;
+StyledInput.defaultProps = defaultProps;
+
+Input.propTypes = {
+  ...Box.propTypes,
+  /**
+   * Sets theme
+   */
+  theme: PropTypes.object,
+};
+
 Input.displayName = 'Input';
 
-WithIconWrapper.InputOnly = Input;
+export { StyledInput };
 
-export default WithIconWrapper;
+export default Input;

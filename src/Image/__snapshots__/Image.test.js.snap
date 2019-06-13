@@ -1,32 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image component sanity matches default snapshot 1`] = `
-.c0 {
-  width: 100%;
-  display: block;
-}
-
-.c0 {
-  box-sizing: border-box;
-}
-
 <img
-  class="c0"
+  class=""
   display="block"
-  width="100%"
+  height="auto"
 />
 `;
 
 exports[`Image component sanity matches themed snapshot 1`] = `
-.c1 {
-  width: 100%;
-  display: block;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
 .c0 {
   font-size: 1em;
   font-family: "Source Sans Pro",-apple-system,sans-serif;
@@ -37,9 +19,9 @@ exports[`Image component sanity matches themed snapshot 1`] = `
   class="c0"
 >
   <img
-    class="c1"
+    class=""
     display="block"
-    width="100%"
+    height="auto"
   />
 </div>
 `;

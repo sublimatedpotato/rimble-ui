@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import Box from '../Box';
 import Input from '../Input';
 import Field from '../Field';
@@ -14,7 +14,7 @@ class Form extends Component {
     }
 
     return (
-      <Box className={className} {...this.props}>
+      <Box as={'form'} className={className} {...this.props}>
         {children}
       </Box>
     );
@@ -22,13 +22,20 @@ class Form extends Component {
 }
 
 Form.defaultProps = {
-  as: 'form',
   validated: false,
+};
+
+Form.propTypes = {
+  ...Box.propTypes,
+  /**
+   * Shows the input validation styles when true
+   */
+  validated: PropTypes.bool,
 };
 
 Form.displayName = 'Form';
 
-Form.Input = Input;
+Form.Input = Input.WithValidationStyle;
 Form.Field = Field;
 Form.Check = Checkbox;
 

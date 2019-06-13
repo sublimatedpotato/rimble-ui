@@ -1,10 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import Input from '../Input';
+import theme from '../theme';
 import ExpandMore from 'rmdi/lib/ExpandMore';
-
-import defaultTheme from '../theme';
+import { StyledInput } from '../Input';
 
 const StyledWrapper = styled.span`
   & {
@@ -21,7 +20,7 @@ const StyledWrapper = styled.span`
   }
 `;
 
-const StyledSelect = styled(Input.InputOnly)`
+const StyledSelect = styled(StyledInput)`
   & {
     appearance: none;
     padding: 0 3rem 0 1rem;
@@ -42,8 +41,15 @@ const Select = props => (
 );
 
 Select.defaultProps = {
-  theme: defaultTheme,
+  theme,
   as: 'select',
+};
+
+Select.propTypes = {
+  /**
+   * Sets theme
+   */
+  theme: PropTypes.object,
 };
 
 Select.displayName = 'Select';

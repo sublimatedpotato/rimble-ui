@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { timingFunctions, ellipsis } from 'polished';
 
@@ -6,7 +7,7 @@ import Box from '../Box';
 import Icon from '../Icon';
 import Text from '../Text';
 import Link from '../Link';
-import TextButton from '../TextButton';
+import Button from '../Button';
 
 import AnimatedIconProcessing from './AnimatedIconProcessing.js';
 import IconPositive from './IconPositive';
@@ -190,7 +191,7 @@ const ToastMessage = ({ className, ...props }) => {
   const renderCloseBttn = ({ closeElem, closeFunction }) => {
     if (closeElem) {
       return (
-        <TextButton
+        <Button.Text
           onClick={closeFunction}
           className={'closeBttn'}
           size={'small'}
@@ -202,7 +203,7 @@ const ToastMessage = ({ className, ...props }) => {
             size={'16px'}
             color={!themeIsDark ? '#666' : '#afafaf'}
           />
-        </TextButton>
+        </Button.Text>
       );
     } else {
       return null;
@@ -452,10 +453,45 @@ ToastMessage.defaultProps = {
   secondaryMessage: '',
   actionHref: '',
   actionText: '',
-  variant: false,
-  icon: false,
-  colorTheme: '',
+  variant: 'default',
+  icon: '',
+  colorTheme: 'light',
   closeElem: false,
+};
+
+ToastMessage.propTypes = {
+  /**
+   * Sets primary content
+   */
+  message: PropTypes.string,
+  /**
+   * Sets secondary content
+   */
+  secondaryMessage: PropTypes.string,
+  /**
+   * Sets URL for button
+   */
+  actionHref: PropTypes.string,
+  /**
+   * Sets text for button
+   */
+  actionText: PropTypes.string,
+  /**
+   * Sets type of ToastMessage to display
+   */
+  variant: PropTypes.oneOf(['default', 'success', 'failure', 'processing']),
+  /**
+   * Sets icon
+   */
+  icon: PropTypes.string,
+  /**
+   * Sets background and text color
+   */
+  colorTheme: PropTypes.oneOf(['light', 'dark']),
+  /**
+   * Allows ToastMessage to be closed by user
+   */
+  closeElem: PropTypes.bool,
 };
 
 ToastMessage.displayName = 'ToastMessage';

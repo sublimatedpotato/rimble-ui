@@ -14,27 +14,29 @@ exports[`Field component sanity matches default snapshot 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  text-align: left;
 }
 
 .c0 {
   box-sizing: border-box;
 }
 
-.c1 {
-  margin-bottom: 8px;
+.c3 {
   color: #3F3D4B;
-  font-size: 14px;
-  text-align: left;
-  font-size: 14px;
-  font-family: "Source Sans Pro",-apple-system,sans-serif;
-  font-weight: 600;
-  text-align: left;
-  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
-.c1 {
+.c3 {
   box-sizing: border-box;
+}
+
+.c2 {
+  font-family: "Source Sans Pro",-apple-system,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  color: #3F3D4B;
+  margin-bottom: 8px;
 }
 
 .c1:after {
@@ -48,7 +50,7 @@ exports[`Field component sanity matches default snapshot 1`] = `
   display="flex"
 >
   <div
-    class="c1"
+    class="c1 c2 c3"
     color="copyColor"
     font-family="sansSerif"
     font-size="1"
@@ -71,27 +73,29 @@ exports[`Field component sanity matches themed snapshot 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  text-align: left;
 }
 
 .c1 {
   box-sizing: border-box;
 }
 
-.c2 {
-  margin-bottom: 8px;
+.c4 {
   color: #3F3D4B;
-  font-size: 14px;
-  text-align: left;
-  font-size: 14px;
-  font-family: "Source Sans Pro",-apple-system,sans-serif;
-  font-weight: 600;
-  text-align: left;
-  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
-.c2 {
+.c4 {
   box-sizing: border-box;
+}
+
+.c3 {
+  font-family: "Source Sans Pro",-apple-system,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  color: #3F3D4B;
+  margin-bottom: 8px;
 }
 
 .c2:after {
@@ -114,7 +118,7 @@ exports[`Field component sanity matches themed snapshot 1`] = `
     display="flex"
   >
     <div
-      class="c2"
+      class="c2 c3 c4"
       color="copyColor"
       font-family="sansSerif"
       font-size="1"

@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { textAlign } from 'styled-system';
+import theme from '../theme';
 import Box from '../Box';
 
-const Card = styled(Box)`
+const StyledCard = styled(Box)`
   & {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     transition: box-shadow 300ms ease;
@@ -15,7 +17,10 @@ const Card = styled(Box)`
   ${textAlign}
 `;
 
+const Card = props => <StyledCard {...props} />;
+
 Card.defaultProps = {
+  theme,
   position: 'relative',
   bg: 'white',
   border: 1,
@@ -28,6 +33,14 @@ Card.defaultProps = {
   minHeight: 1,
   p: 4,
   textAlign: 'left',
+};
+
+Card.propTypes = {
+  ...Box.propTypes,
+  /**
+   * Sets theme
+   */
+  theme: PropTypes.object,
 };
 
 Card.displayName = 'Card';

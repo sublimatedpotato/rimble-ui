@@ -2,7 +2,7 @@
 
 exports[`Select component sanity matches default snapshot 1`] = `
 <styled.span>
-  <Styled(Input)
+  <Styled(Styled(Box))
     as="select"
     bg="white"
     border={1}
@@ -35,6 +35,40 @@ exports[`Select component sanity matches default snapshot 1`] = `
           0,
           "1px solid transparent",
         ],
+        "buttonSizes": Object {
+          "large": Object {
+            "fontSize": "1.5rem",
+            "height": "4rem",
+            "minWidth": "4rem",
+          },
+          "medium": Object {
+            "fontSize": "1rem",
+            "height": "3rem",
+            "minWidth": "3rem",
+          },
+          "small": Object {
+            "fontSize": "0.75rem",
+            "height": "2rem",
+            "minWidth": "2rem",
+            "padding": "0 1rem",
+          },
+        },
+        "buttons": Object {
+          "danger": Object {
+            "--contrast-color": "#fff",
+            "--main-color": "#DC2C10",
+          },
+          "primary": Object {
+            "--contrast-color": "#fff",
+            "--main-color": "#4E3FCE",
+            "backgroundColor": "#4E3FCE",
+            "color": "#fff",
+          },
+          "success": Object {
+            "--contrast-color": "#FFF",
+            "--main-color": "#28C081",
+          },
+        },
         "colors": Object {
           "black": "#000e1a",
           "blacks": Array [
@@ -51,20 +85,25 @@ exports[`Select component sanity matches default snapshot 1`] = `
             "rgba(0,0,0,.8)",
             "rgba(0,0,0,.9)",
           ],
-          "blue": "#007ce0",
+          "blue": "#3259D6",
           "copyColor": "#3F3D4B",
+          "danger": "#DC2C10",
           "dark-gray": "#333",
           "grey": "#CCC",
+          "info": "#36ADF1",
           "light-gray": "#eee",
           "light-silver": "#aaa",
           "mid-gray": "#555",
           "moon-gray": "#ccc",
-          "navy": "#004175",
           "near-black": "#111",
           "near-white": "#f4f4f4",
           "primary": "#4E3FCE",
+          "primary-dark": "#3e32a4",
+          "primary-light": "#7165d7",
           "silver": "#999",
+          "success": "#28C081",
           "transparent": "transparent",
+          "warning": "#FD9D28",
           "white": "#fff",
           "whites": Array [
             "rgba(255,255,255,.0125)",
@@ -245,7 +284,7 @@ exports[`Select component sanity matches default snapshot 1`] = `
     >
       Ancient Paper
     </option>
-  </Styled(Input)>
+  </Styled(Styled(Box))>
   <ExpandMoreIcon
     size={24}
   />
@@ -267,26 +306,9 @@ exports[`Select component sanity matches themed snapshot 1`] = `
 }
 
 .c2 {
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #3F3D4B;
-  background-color: #fff;
-  font-size: 1rem;
-  height: 3rem;
-  border: 1px solid transparent;
-  border-color: #CCC;
-  border-radius: 4px;
-  border-color: #CCC;
-  border-radius: 4px;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
   font-size: 1rem;
   font-family: "Source Sans Pro",-apple-system,sans-serif;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c2 {

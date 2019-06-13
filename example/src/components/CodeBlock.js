@@ -6,7 +6,7 @@ import Prism from 'prismjs';
 import PrismJsx from 'prismjs/components/prism-jsx.min';
 import PrismJs from 'prismjs/components/prism-javascript';
 import PrismMarkup from 'prismjs/components/prism-markup.min';
-import { Flex, Box, Text, OutlineButton, Checkbox } from 'rimble-ui';
+import { Flex, Box, Text, Button, Checkbox } from 'rimble-ui';
 
 import './CodeBlock.css';
 
@@ -41,9 +41,9 @@ class CodeBlock extends Component {
   };
   render() {
     return (
-      <Box mb={5} minWidth={'100%'}>
+      <Box mb={5} width={'100%'}>
         <Box>
-          {this.props.textOnly ? null : <Flex>{this.props.children}</Flex> }
+          {this.props.textOnly ? null : <Box>{this.props.children}</Box> }
 
           <Box
             position={'relative'}
@@ -70,16 +70,16 @@ class CodeBlock extends Component {
             position={'relative'}
             my={2}
           >
-            <OutlineButton
-              onClick={this.copyToClipboard}
+            <Box
               style={{ zIndex: '1' }}
-              size="small"
               position={'absolute'}
               top={'.5rem'}
               right={'.5rem'}
             >
-              { this.state.copySuccess ? this.state.copySuccess : `Copy Code` }
-            </OutlineButton>
+              <Button.Outline onClick={this.copyToClipboard} size="small">
+                { this.state.copySuccess ? this.state.copySuccess : `Copy Code` }
+              </Button.Outline>
+            </Box>
             <pre
               className={this.props.syntax ? this.props.syntax : 'language-html'}
               style={{

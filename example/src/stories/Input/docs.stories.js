@@ -18,12 +18,11 @@ import {
   Field,
   Text,
   Input,
-  OutlineButton,
   Pill,
   Link,
 } from 'rimble-ui';
 
-storiesOf('Components/Form/Inputs', module)
+storiesOf('Components/Inputs', module)
   .add(
     'Documentation',
     withDocs(Documentation, () => (
@@ -98,7 +97,7 @@ storiesOf('Components/Form/Inputs', module)
           <Heading.h4>Text input</Heading.h4>
           <Text.p>Brings up a standard keyboard.</Text.p>
           <Field label="Public address">
-            <Form.Input
+            <Input
               type="text"
               required="true"
               placeholder="e.g. 0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
@@ -107,7 +106,7 @@ storiesOf('Components/Form/Inputs', module)
         </Box>
         <CodeBlock textOnly>
           {
-            '<Form.Input type="text" required="true" placeholder="e.g. 0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />'
+            '<Input type="text" required="true" placeholder="e.g. 0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />'
           }
         </CodeBlock>
 
@@ -115,7 +114,7 @@ storiesOf('Components/Form/Inputs', module)
           <Heading.h4>Email input</Heading.h4>
           <Text.p>Gives you an @ on your keyboard.</Text.p>
           <Field label="Email">
-            <Form.Input
+            <Input
               type="email"
               name="email"
               id="email"
@@ -127,7 +126,7 @@ storiesOf('Components/Form/Inputs', module)
 
         <CodeBlock textOnly>
           {
-            '<Form.Input type="email" required="true" placeholder="you@example.com" />'
+            '<Input type="email" required="true" placeholder="you@example.com" />'
           }
         </CodeBlock>
 
@@ -135,12 +134,12 @@ storiesOf('Components/Form/Inputs', module)
           <Heading.h4>Password input</Heading.h4>
           <Text.p>Masks any input.</Text.p>
           <Field label="Password">
-            <Form.Input required="true" type="password" />
+            <Input required="true" type="password" />
           </Field>
         </Box>
 
         <CodeBlock textOnly>
-          {'<Form.Input type="password" required="true" />'}
+          {'<Input type="password" required="true" />'}
         </CodeBlock>
 
         <Box>
@@ -150,7 +149,7 @@ storiesOf('Components/Form/Inputs', module)
             increase/decrease the value on desktop too.
           </Text.p>
           <Field label="Number">
-            <Form.Input
+            <Input
               required="true"
               type="number"
               placeholder="e.g. 0.00001234"
@@ -160,7 +159,7 @@ storiesOf('Components/Form/Inputs', module)
 
         <CodeBlock textOnly>
           {
-            '<Form.Input type="number" required="true" placeholder="e.g. 123" />'
+            '<Input type="number" required="true" placeholder="e.g. 123" />'
           }
         </CodeBlock>
 
@@ -168,7 +167,7 @@ storiesOf('Components/Form/Inputs', module)
           <Heading.h4>Search input</Heading.h4>
           <Text.p>Allows you to quickly remove a search term.</Text.p>
           <Field label="Enter a search term">
-            <Form.Input
+            <Input
               required="true"
               type="search"
               placeholder="e.g. Ethereum"
@@ -177,7 +176,7 @@ storiesOf('Components/Form/Inputs', module)
         </Box>
         <CodeBlock textOnly>
           {
-            '<Form.Input type="search" required="true" placeholder="e.g. Ethereum" />'
+            '<Input type="search" required="true" placeholder="e.g. Ethereum" />'
           }
         </CodeBlock>
 
@@ -185,7 +184,7 @@ storiesOf('Components/Form/Inputs', module)
           <Heading.h4>Telephone input</Heading.h4>
           <Text.p>Brings up the telephone keyboard.</Text.p>
           <Field label="Telephone">
-            <Form.Input
+            <Input
               type="tel"
               required="true"
               placeholder="e.g. +445575242519"
@@ -195,83 +194,45 @@ storiesOf('Components/Form/Inputs', module)
 
         <CodeBlock textOnly>
           {
-            '<Form.Input type="tel" required="true" placeholder="e.g. +445575242519" />'
+            '<Input type="tel" required="true" placeholder="e.g. +445575242519" />'
           }
         </CodeBlock>
 
         <Box>
           <Heading.h4>URL input</Heading.h4>
           <Text.p>Brings up a url keyboard.</Text.p>
-          <Field label="URL">
-            <Form.Input
-              type="url"
-              required="true"
-              placeholder="e.g. rimble.consensys.design"
-            />
-          </Field>
+          <CodeBlock>
+            <Field label="URL">
+              <Input
+                type="url"
+                required="true"
+                placeholder="e.g. rimble.consensys.design"
+              />
+            </Field>
+          </CodeBlock>
         </Box>
 
-        <CodeBlock textOnly>
-          {
-            '<Form.Input type="url" required="true" placeholder="e.g. rimble.consensys.design" />'
-          }
-        </CodeBlock>
+        <Box>
+          <Heading fontSize={3}>File input</Heading>
+          <Text.p>Renders a custom <code>{'<input type="file" />'}</code> element.</Text.p>
+          <Text.p>you must pass an <code>{'id'}</code> attr. </Text.p>
+          <CodeBlock>
+            <Field label="File Input">
+              <Input type="file" id="my_file_upload" multiple />
+            </Field>
+          </CodeBlock>
+        </Box>
+
+        <Box>
+          <Heading fontSize={3}>File input (unstyled)</Heading>
+          <Text.p>Renders a basic <code>{'<input type="file" />'}</code> element.</Text.p>
+          <CodeBlock>
+            <Field label="File Input">
+              <Input type="file" id="my_file_upload_b" variant={'unstyled'} />
+            </Field>
+          </CodeBlock>
+        </Box>
+
       </Box>
     ))
   )
-  .add(
-    'Design guidelines',
-    withDocs(Guidelines, () => (
-      <Box mx={3}>
-        <Box>
-          <Heading.h3>Design</Heading.h3>
-          <Text>
-            Some best practices for using <code>{'Input'}</code> in your
-            product.
-          </Text>
-        </Box>
-        <Box>
-          <Heading.h4>Don't use placeholders instead of labels</Heading.h4>
-          <Text>
-            Placeholders disappear as the user enters the field. This makes
-            reviewing form entries difficult as you lose the explanation of the
-            expected input.
-          </Text>
-        </Box>
-        <br />
-        <Flex>
-          <Card mx={'auto'} my={3} px={4} width="400px">
-            <Pill mb={3} color={'green'}>
-              {'Do'}
-            </Pill>
-            <br />
-            <br />
-            <Field label="Public address">
-              <Input
-                type="text"
-                width="100%"
-                required="true"
-                placeholder="e.g. 0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
-              />
-            </Field>
-          </Card>
-          <Card mx={'auto'} my={3} px={4} width="400px">
-            <Pill mb={3} color={'red'}>
-              {"Don't"}
-            </Pill>
-            <br />
-            <br />
-            <Field>
-              <Input
-                type="text"
-                width="100%"
-                required="true"
-                placeholder="Public address"
-              />
-            </Field>
-          </Card>
-        </Flex>
-        <ContributeBanner />
-      </Box>
-    ))
-  );

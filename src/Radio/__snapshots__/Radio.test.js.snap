@@ -1,47 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio component sanity matches default snapshot 1`] = `
+.c2 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  color: #3F3D4B;
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  font-family: "Source Sans Pro",-apple-system,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: left;
+  color: #3F3D4B;
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
 .c0 {
-  color: #4E3FCE;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  text-align: left;
-  opacity: 1;
-}
-
-.c0 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  margin-left: 4px;
-  margin-right: 8px;
-  color: #3F3D4B;
-  font-size: 14px;
-  text-align: left;
-  font-size: 14px;
-  font-family: "Source Sans Pro",-apple-system,sans-serif;
-  font-weight: 600;
-  text-align: left;
-  line-height: 1.5;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  text-align: left;
-}
-
-.c1 {
-  box-sizing: border-box;
 }
 
 .c1 {
@@ -76,7 +69,7 @@ exports[`Radio component sanity matches default snapshot 1`] = `
 .c1 > svg[name='checked'] {
   display: none;
   z-index: 1;
-  fill: #4E3FCE;
+  fill: #000;
 }
 
 .c1 > input:checked ~ svg[name='checked'] {
@@ -86,11 +79,10 @@ exports[`Radio component sanity matches default snapshot 1`] = `
 <label
   class="c0"
   color="primary"
-  display="flex"
   opacity="1"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
     <input
       color="primary"
@@ -122,7 +114,7 @@ exports[`Radio component sanity matches default snapshot 1`] = `
     </svg>
   </div>
   <div
-    class="c2"
+    class="c3 c4"
     color="copyColor"
     font-family="sansSerif"
     font-size="1"
@@ -132,47 +124,40 @@ exports[`Radio component sanity matches default snapshot 1`] = `
 `;
 
 exports[`Radio component sanity matches themed snapshot 1`] = `
+.c3 {
+  box-sizing: border-box;
+}
+
+.c5 {
+  color: #3F3D4B;
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+.c5 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  font-family: "Source Sans Pro",-apple-system,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: left;
+  color: #3F3D4B;
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
 .c1 {
-  color: #4E3FCE;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  text-align: left;
-  opacity: 1;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  margin-left: 4px;
-  margin-right: 8px;
-  color: #3F3D4B;
-  font-size: 14px;
-  text-align: left;
-  font-size: 14px;
-  font-family: "Source Sans Pro",-apple-system,sans-serif;
-  font-weight: 600;
-  text-align: left;
-  line-height: 1.5;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  text-align: left;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c2 {
@@ -226,11 +211,10 @@ exports[`Radio component sanity matches themed snapshot 1`] = `
   <label
     class="c1"
     color="primary"
-    display="flex"
     opacity="1"
   >
     <div
-      class="c2"
+      class="c2 c3"
     >
       <input
         color="primary"
@@ -262,7 +246,7 @@ exports[`Radio component sanity matches themed snapshot 1`] = `
       </svg>
     </div>
     <div
-      class="c3"
+      class="c4 c5"
       color="copyColor"
       font-family="sansSerif"
       font-size="1"

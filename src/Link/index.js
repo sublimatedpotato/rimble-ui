@@ -1,35 +1,56 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { tint, shade } from 'polished';
-import { themeGet } from 'styled-system';
-
+import { style } from 'styled-system';
+import theme from '../theme';
 import Text from '../Text';
 
-import defaultTheme from '../theme';
+const hoverColor = style({
+  prop: 'hoverColor',
+  cssProperty: 'color',
+  key: 'colors',
+});
 
-const Link = styled(Text).attrs(props => ({
-  primarycolor: themeGet('colors.primary', 'black')(props),
-}))`
+const activeColor = style({
+  prop: 'activeColor',
+  cssProperty: 'color',
+  key: 'colors',
+});
+
+const StyledLink = styled(Text)`
   & {
     text-decoration: none;
   }
+
   &:hover {
-    color: ${props => tint(0.2, props.primarycolor)};
     text-decoration: underline;
+    ${hoverColor};
   }
+
   &:active {
-    color: ${props => shade(0.2, props.primarycolor)};
     text-decoration: none;
+    ${activeColor};
   }
 `;
 
+const Link = props => <StyledLink {...props} />;
+
 Link.defaultProps = {
-  theme: defaultTheme,
+  theme,
   as: 'a',
   color: 'primary',
-  fontFamily: 'sansSerif',
+  hoverColor: 'primary-light',
+  activeColor: 'primary-dark',
   fontSize: 1,
   fontWeight: 3,
+};
+
+Link.propTypes = {
+  ...Text.propTypes,
+  /**
+   * Sets theme
+   */
+  theme: PropTypes.object,
 };
 
 Link.displayName = 'Link';
